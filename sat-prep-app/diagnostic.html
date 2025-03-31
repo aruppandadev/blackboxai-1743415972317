@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic Test | LearnerLabs SAT Prep</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .question-answered {
+            background-color: #4f46e5;
+            color: white;
+        }
+        .question-current {
+            border: 2px solid #4f46e5;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex">
+        <!-- Sidebar -->
+        <div class="hidden md:flex md:flex-shrink-0">
+            <div class="flex flex-col w-64 bg-white border-r border-gray-200">
+                <div class="h-0 flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+                    <div class="flex items-center flex-shrink-0 px-4">
+                        <i class="fas fa-graduation-cap text-indigo-600 text-2xl"></i>
+                        <span class="ml-2 text-xl font-bold text-gray-900">LearnerLabs</span>
+                    </div>
+                    <nav class="mt-5 flex-1 px-2 space-y-1">
+                        <a href="dashboard.html" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <i class="fas fa-tachometer-alt text-gray-400 mr-3"></i>
+                            Dashboard
+                        </a>
+                        <a href="#" class="bg-indigo-50 text-indigo-600 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <i class="fas fa-clipboard-check text-indigo-500 mr-3"></i>
+                            Diagnostic Test
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Test Header -->
+            <header class="bg-white shadow-sm">
+                <div class="px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between h-16 items-center">
+                        <div>
+                            <h1 class="text-lg font-medium text-gray-900">SAT Diagnostic Test</h1>
+                            <p class="text-sm text-gray-500">Section 1: Reading</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="mr-4 flex items-center">
+                                <i class="fas fa-clock text-indigo-600 mr-2"></i>
+                                <span class="font-medium" id="timer">65:00</span>
+                            </div>
+                            <button class="px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                                Submit Test
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Test Content -->
+            <main class="flex-1 overflow-y-auto p-6">
+                <div class="flex flex-col lg:flex-row gap-6">
+                    <!-- Questions Panel -->
+                    <div class="lg:w-3/4">
+                        <div class="bg-white p-6 rounded-lg shadow mb-6">
+                            <div class="prose max-w-none">
+                                <p class="text-gray-700 mb-4">
+                                    <strong>Directions:</strong> Each passage or pair of passages below is followed by a number of questions. After reading each passage or pair, choose the best answer to each question based on what is stated or implied in the passage or passages and in any accompanying graphics.
+                                </p>
+                                
+                                <div class="border-l-4 border-indigo-200 pl-4 mb-6">
+                                    <p class="text-gray-700 italic">
+                                        This passage is adapted from Jane Austen, <em>Pride and Prejudice</em>. Originally published in 1813.
+                                    </p>
+                                </div>
+                                
+                                <p class="text-gray-700 mb-4">
+                                    It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife. However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered the rightful property of some one or other of their daughters.
+                                </p>
+                                
+                                <div class="bg-gray-50 p-4 rounded-md mb-6">
+                                    <p class="text-gray-700 font-medium mb-2">Question 1</p>
+                                    <p class="text-gray-700 mb-4">
+                                        The main purpose of the passage is to:
+                                    </p>
+                                    
+                                    <div class="space-y-3">
+                                        <div class="flex items-start">
+                                            <div class="flex items-center h-5">
+                                                <input id="q1-a" name="q1" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                            </div>
+                                            <div class="ml-3 text-sm">
+                                                <label for="q1-a" class="font-medium text-gray-700">A. introduce the Bennet family and their social standing</label>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <div class="flex items-center h-5">
+                                                <input id="q1-b" name="q1" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                            </div>
+                                            <div class="ml-3 text-sm">
+                                                <label for="q1-b" class="font-medium text-gray-700">B. establish the novel's central conflict about marriage</label>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <div class="flex items-center h-5">
+                                                <input id="q1-c" name="q1" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                            </div>
+                                            <div class="ml-3 text-sm">
+                                                <label for="q1-c" class="font-medium text-gray-700">C. criticize the social norms of 19th century England</label>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <div class="flex items-center h-5">
+                                                <input id="q1-d" name="q1" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                            </div>
+                                            <div class="ml-3 text-sm">
+                                                <label for="q1-d" class="font-medium text-gray-700">D. describe the setting where the story takes place</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex justify-between mt-6">
+                                    <button class="px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                        Previous
+                                    </button>
+                                    <button class="px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                                        Next
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Panel -->
+                    <div class="lg:w-1/4">
+                        <div class="bg-white p-6 rounded-lg shadow sticky top-6">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Questions</h3>
+                            <div class="grid grid-cols-5 gap-2">
+                                <button class="w-10 h-10 rounded-full bg-indigo-600 text-white font-medium flex items-center justify-center question-answered question-current">
+                                    1
+                                </button>
+                                <button class="w-10 h-10 rounded-full border border-gray-300 font-medium flex items-center justify-center hover:bg-gray-50">
+                                    2
+                                </button>
+                                <button class="w-10 h-10 rounded-full border border-gray-300 font-medium flex items-center justify-center hover:bg-gray-50">
+                                    3
+                                </button>
+                                <button class="w-10 h-10 rounded-full border border-gray-300 font-medium flex items-center justify-center hover:bg-gray-50">
+                                    4
+                                </button>
+                                <button class="w-10 h-10 rounded-full border border-gray-300 font-medium flex items-center justify-center hover:bg-gray-50">
+                                    5
+                                </button>
+                                <button class="w-10 h-10 rounded-full border border-gray-300 font-medium flex items-center justify-center hover:bg-gray-50">
+                                    6
+                                </button>
+                                <button class="w-10 h-10 rounded-full border border-gray-300 font-medium flex items-center justify-center hover:bg-gray-50">
+                                    7
+                                </button>
+                                <button class="w-10 h-10 rounded-full border border-gray-300 font-medium flex items-center justify-center hover:bg-gray-50">
+                                    8
+                                </button>
+                                <button class="w-10 h-10 rounded-full border border-gray-300 font-medium flex items-center justify-center hover:bg-gray-50">
+                                    9
+                                </button>
+                                <button class="w-10 h-10 rounded-full border border-gray-300 font-medium flex items-center justify-center hover:bg-gray-50">
+                                    10
+                                </button>
+                            </div>
+                            
+                            <div class="mt-6 pt-6 border-t border-gray-200">
+                                <h3 class="text-lg font-medium text-gray-900 mb-2">Test Sections</h3>
+                                <div class="space-y-2">
+                                    <button class="w-full px-4 py-2 text-left bg-indigo-50 text-indigo-700 rounded-md text-sm font-medium">
+                                        Reading (65 min)
+                                    </button>
+                                    <button class="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-50 rounded-md text-sm font-medium">
+                                        Writing (35 min)
+                                    </button>
+                                    <button class="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-50 rounded-md text-sm font-medium">
+                                        Math - No Calculator (25 min)
+                                    </button>
+                                    <button class="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-50 rounded-md text-sm font-medium">
+                                        Math - Calculator (55 min)
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Timer functionality
+        let minutes = 65;
+        let seconds = 0;
+        
+        function updateTimer() {
+            const timerElement = document.getElementById('timer');
+            timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (seconds === 0) {
+                if (minutes === 0) {
+                    // Time's up!
+                    clearInterval(timerInterval);
+                    alert('Time is up! Your test will be automatically submitted.');
+                    return;
+                }
+                minutes--;
+                seconds = 59;
+            } else {
+                seconds--;
+            }
+        }
+        
+        const timerInterval = setInterval(updateTimer, 1000);
+        
+        // Question navigation
+        document.querySelectorAll('.grid button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove current class from all buttons
+                document.querySelectorAll('.grid button').forEach(btn => {
+                    btn.classList.remove('question-current');
+                });
+                
+                // Add current class to clicked button
+                this.classList.add('question-current');
+                
+                // In a real app, this would load the corresponding question
+            });
+        });
+    </script>
+</body>
+</html>
