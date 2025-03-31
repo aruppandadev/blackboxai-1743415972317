@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes | LearnerLabs SAT Prep</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .note-card {
+            transition: all 0.2s ease;
+        }
+        .note-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .note-editor {
+            min-height: 300px;
+        }
+        .tag {
+            transition: all 0.2s ease;
+        }
+        .tag:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex">
+        <!-- Sidebar -->
+        <div class="hidden md:flex md:flex-shrink-0">
+            <div class="flex flex-col w-64 bg-white border-r border-gray-200">
+                <div class="h-0 flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+                    <div class="flex items-center flex-shrink-0 px-4">
+                        <i class="fas fa-graduation-cap text-indigo-600 text-2xl"></i>
+                        <span class="ml-2 text-xl font-bold text-gray-900">LearnerLabs</span>
+                    </div>
+                    <nav class="mt-5 flex-1 px-2 space-y-1">
+                        <a href="#" class="bg-indigo-50 text-indigo-600 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <i class="fas fa-book text-indigo-500 mr-3"></i>
+                            Notes
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Notes Header -->
+            <header class="bg-white shadow-sm">
+                <div class="px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between h-16 items-center">
+                        <div class="flex items-center">
+                            <h1 class="text-lg font-medium text-gray-900">My Notes</h1>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="relative max-w-xs">
+                                <input type="text" placeholder="Search notes..." class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-search text-gray-400"></i>
+                                </div>
+                            </div>
+                            <button class="px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                                <i class="fas fa-plus mr-2"></i>
+                                New Note
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Notes Content -->
+            <main class="flex-1 overflow-y-auto">
+                <div class="flex h-full">
+                    <!-- Notes List -->
+                    <div class="w-1/3 border-r border-gray-200 bg-white overflow-y-auto">
+                        <div class="p-4">
+                            <div class="flex items-center justify-between mb-4">
+                                <h2 class="text-lg font-medium text-gray-900">All Notes</h2>
+                                <span class="text-sm text-gray-500">24 notes</span>
+                            </div>
+                            <div class="space-y-3">
+                                <!-- Note 1 -->
+                                <div class="note-card bg-white p-4 border border-gray-200 rounded-lg cursor-pointer">
+                                    <div class="flex justify-between items-start">
+                                        <h3 class="font-medium text-gray-900 mb-1">Algebra Formulas</h3>
+                                        <span class="text-xs text-gray-500">2 days ago</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mb-2 line-clamp-2">Key formulas for quadratic equations, exponents, and linear functions. Remember the quadratic formula is x = [-b ± √(b²-4ac)]/2a</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="tag px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800">Math</span>
+                                        <span class="tag px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">Formulas</span>
+                                    </div>
+                                </div>
+
+                                <!-- Note 2 -->
+                                <div class="note-card bg-white p-4 border border-gray-200 rounded-lg cursor-pointer">
+                                    <div class="flex justify-between items-start">
+                                        <h3 class="font-medium text-gray-900 mb-1">Reading Strategies</h3>
+                                        <span class="text-xs text-gray-500">1 week ago</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mb-2 line-clamp-2">Always read questions first, then scan passage for key terms. Main idea questions require looking at the whole passage.</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="tag px-2 py-1 text-xs rounded-full bg-purple-100 text-purple-800">Reading</span>
+                                        <span class="tag px-2 py-1 text-xs rounded-full bg-yellow-100 text-yellow-800">Strategies</span>
+                                    </div>
+                                </div>
+
+                                <!-- Note 3 -->
+                                <div class="note-card bg-white p-4 border border-gray-200 rounded-lg cursor-pointer">
+                                    <div class="flex justify-between items-start">
+                                        <h3 class="font-medium text-gray-900 mb-1">Common Grammar Rules</h3>
+                                        <span class="text-xs text-gray-500">2 weeks ago</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mb-2 line-clamp-2">Subject-verb agreement, pronoun clarity, and proper modifier placement. Watch for dangling modifiers in particular.</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="tag px-2 py-1 text-xs rounded-full bg-red-100 text-red-800">Writing</span>
+                                        <span class="tag px-2 py-1 text-xs rounded-full bg-indigo-100 text-indigo-800">Grammar</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Note Editor -->
+                    <div class="flex-1 overflow-y-auto bg-gray-50">
+                        <div class="p-6">
+                            <div class="bg-white rounded-lg shadow overflow-hidden">
+                                <!-- Note Header -->
+                                <div class="px-6 py-4 border-b border-gray-200">
+                                    <div class="flex items-center justify-between">
+                                        <input type="text" value="Algebra Formulas" class="text-xl font-bold text-gray-900 border-none focus:ring-0 w-full">
+                                        <div class="flex space-x-2">
+                                            <button class="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded">
+                                                <i class="fas fa-tag"></i>
+                                            </button>
+                                            <button class="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                            <button class="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded">
+                                                <i class="fas fa-ellipsis-v"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 flex items-center text-sm text-gray-500">
+                                        <span>Last edited 2 days ago</span>
+                                        <span class="mx-2">•</span>
+                                        <span>Math</span>
+                                    </div>
+                                </div>
+
+                                <!-- Formatting Toolbar -->
+                                <div class="px-6 py-2 border-b border-gray-200 bg-gray-50 flex space-x-1">
+                                    <button class="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-200 rounded">
+                                        <i class="fas fa-bold"></i>
+                                    </button>
+                                    <button class="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-200 rounded">
+                                        <i class="fas fa-italic"></i>
+                                    </button>
+                                    <button class="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-200 rounded">
+                                        <i class="fas fa-underline"></i>
+                                    </button>
+                                    <div class="border-l border-gray-300 mx-1"></div>
+                                    <button class="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-200 rounded">
+                                        <i class="fas fa-list-ul"></i>
+                                    </button>
+                                    <button class="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-200 rounded">
+                                        <i class="fas fa-list-ol"></i>
+                                    </button>
+                                    <div class="border-l border-gray-300 mx-1"></div>
+                                    <button class="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-200 rounded">
+                                        <i class="fas fa-link"></i>
+                                    </button>
+                                    <button class="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-200 rounded">
+                                        <i class="fas fa-image"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Note Content -->
+                                <div class="note-editor p-6">
+                                    <h2 class="text-xl font-bold mb-4">Algebra Formulas</h2>
+                                    <div class="prose max-w-none">
+                                        <h3 class="font-bold text-lg mb-2">Quadratic Equations</h3>
+                                        <p class="mb-4">The quadratic formula is essential for solving equations of the form ax² + bx + c = 0:</p>
+                                        <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                                            <p class="font-mono text-center">x = [-b ± √(b²-4ac)]/2a</p>
+                                        </div>
+                                        <p class="mb-4">Remember that the discriminant (b²-4ac) tells you about the nature of the roots:</p>
+                                        <ul class="list-disc pl-5 mb-4">
+                                            <li class="mb-1">Positive discriminant: Two real roots</li>
+                                            <li class="mb-1">Zero discriminant: One real root</li>
+                                            <li>Negative discriminant: Two complex roots</li>
+                                        </ul>
+
+                                        <h3 class="font-bold text-lg mb-2">Exponent Rules</h3>
+                                        <table class="min-w-full divide-y divide-gray-200 mb-4">
+                                            <tbody class="bg-white divide-y divide-gray-200">
+                                                <tr>
+                                                    <td class="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-900">Product Rule</td>
+                                                    <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">xᵃ · xᵇ = xᵃ⁺ᵇ</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-900">Quotient Rule</td>
+                                                    <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">xᵃ / xᵇ = xᵃ⁻ᵇ</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-900">Power Rule</td>
+                                                    <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">(xᵃ)ᵇ = xᵃᵇ</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <h3 class="font-bold text-lg mb-2">Linear Functions</h3>
+                                        <p>The slope-intercept form is:</p>
+                                        <div class="bg-gray-100 p-4 rounded-lg mb-2">
+                                            <p class="font-mono text-center">y = mx + b</p>
+                                        </div>
+                                        <p>Where m is the slope and b is the y-intercept. For two points (x₁,y₁) and (x₂,y₂), the slope is:</p>
+                                        <div class="bg-gray-100 p-4 rounded-lg">
+                                            <p class="font-mono text-center">m = (y₂ - y₁)/(x₂ - x₁)</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Note Footer -->
+                                <div class="px-6 py-3 border-t border-gray-200 bg-gray-50 flex justify-between items-center">
+                                    <div class="flex space-x-2">
+                                        <button class="px-3 py-1 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                            <i class="fas fa-paperclip mr-1"></i>
+                                            Add Attachment
+                                        </button>
+                                        <button class="px-3 py-1 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                            <i class="fas fa-tag mr-1"></i>
+                                            Add Tag
+                                        </button>
+                                    </div>
+                                    <button class="px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                                        Save Changes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Note selection
+        document.querySelectorAll('.note-card').forEach(card => {
+            card.addEventListener('click', function() {
+                document.querySelectorAll('.note-card').forEach(c => {
+                    c.classList.remove('border-indigo-300', 'bg-indigo-50');
+                });
+                this.classList.add('border-indigo-300', 'bg-indigo-50');
+                // In a real app, this would load the selected note
+            });
+        });
+
+        // Tag filtering
+        document.querySelectorAll('.tag').forEach(tag => {
+            tag.addEventListener('click', function(e) {
+                e.stopPropagation();
+                // In a real app, this would filter notes by tag
+                alert('Filtering by tag: ' + this.textContent);
+            });
+        });
+    </script>
+</body>
+</html>
