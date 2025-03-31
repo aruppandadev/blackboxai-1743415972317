@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Plan | LearnerLabs SAT Prep</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .custom-radio input:checked + span {
+            background-color: #4f46e5;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex">
+        <!-- Sidebar -->
+        <div class="hidden md:flex md:flex-shrink-0">
+            <div class="flex flex-col w-64 bg-white border-r border-gray-200">
+                <div class="h-0 flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+                    <div class="flex items-center flex-shrink-0 px-4">
+                        <i class="fas fa-graduation-cap text-indigo-600 text-2xl"></i>
+                        <span class="ml-2 text-xl font-bold text-gray-900">LearnerLabs</span>
+                    </div>
+                    <nav class="mt-5 flex-1 px-2 space-y-1">
+                        <a href="dashboard.html" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <i class="fas fa-tachometer-alt text-gray-400 mr-3"></i>
+                            Dashboard
+                        </a>
+                        <a href="#" class="bg-indigo-50 text-indigo-600 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                            <i class="fas fa-calendar-alt text-indigo-500 mr-3"></i>
+                            Study Plan
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Header -->
+            <header class="bg-white shadow-sm">
+                <div class="px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between h-16 items-center">
+                        <h1 class="text-lg font-medium text-gray-900">Create Your Study Plan</h1>
+                        <button class="px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                            Generate Plan
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Study Plan Content -->
+            <main class="flex-1 overflow-y-auto p-6">
+                <div class="max-w-3xl mx-auto">
+                    <!-- Plan Configuration -->
+                    <div class="bg-white p-6 rounded-lg shadow mb-6">
+                        <h2 class="text-xl font-bold text-gray-900 mb-6">Plan Configuration</h2>
+                        
+                        <!-- Target Score -->
+                        <div class="mb-8">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Target Score</h3>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <label class="custom-radio">
+                                    <input type="radio" name="target-score" class="hidden" checked>
+                                    <span class="block p-4 border border-gray-300 rounded-lg text-center cursor-pointer hover:border-indigo-500">
+                                        <span class="block text-2xl font-bold">1300</span>
+                                        <span class="block text-sm text-gray-500">Good</span>
+                                    </span>
+                                </label>
+                                <label class="custom-radio">
+                                    <input type="radio" name="target-score" class="hidden">
+                                    <span class="block p-4 border border-gray-300 rounded-lg text-center cursor-pointer hover:border-indigo-500">
+                                        <span class="block text-2xl font-bold">1400</span>
+                                        <span class="block text-sm text-gray-500">Great</span>
+                                    </span>
+                                </label>
+                                <label class="custom-radio">
+                                    <input type="radio" name="target-score" class="hidden">
+                                    <span class="block p-4 border border-gray-300 rounded-lg text-center cursor-pointer hover:border-indigo-500">
+                                        <span class="block text-2xl font-bold">1500</span>
+                                        <span class="block text-sm text-gray-500">Excellent</span>
+                                    </span>
+                                </label>
+                                <label class="custom-radio">
+                                    <input type="radio" name="target-score" class="hidden">
+                                    <span class="block p-4 border border-gray-300 rounded-lg text-center cursor-pointer hover:border-indigo-500">
+                                        <span class="block text-2xl font-bold">1600</span>
+                                        <span class="block text-sm text-gray-500">Perfect</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Test Date -->
+                        <div class="mb-8">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Test Date</h3>
+                            <div class="mt-1 relative rounded-md shadow-sm max-w-xs">
+                                <input type="date" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-3 pr-3 py-2 sm:text-sm border-gray-300 rounded-md" value="2023-12-02">
+                            </div>
+                            <p class="mt-2 text-sm text-gray-500">8 weeks until test day</p>
+                        </div>
+
+                        <!-- Weekly Commitment -->
+                        <div class="mb-8">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Weekly Study Time</h3>
+                            <div class="grid grid-cols-3 gap-4">
+                                <label class="custom-radio">
+                                    <input type="radio" name="study-time" class="hidden">
+                                    <span class="block p-4 border border-gray-300 rounded-lg text-center cursor-pointer hover:border-indigo-500">
+                                        <span class="block text-xl font-bold">5-7 hrs</span>
+                                        <span class="block text-sm text-gray-500">Light</span>
+                                    </span>
+                                </label>
+                                <label class="custom-radio">
+                                    <input type="radio" name="study-time" class="hidden" checked>
+                                    <span class="block p-4 border border-gray-300 rounded-lg text-center cursor-pointer hover:border-indigo-500">
+                                        <span class="block text-xl font-bold">8-10 hrs</span>
+                                        <span class="block text-sm text-gray-500">Moderate</span>
+                                    </span>
+                                </label>
+                                <label class="custom-radio">
+                                    <input type="radio" name="study-time" class="hidden">
+                                    <span class="block p-4 border border-gray-300 rounded-lg text-center cursor-pointer hover:border-indigo-500">
+                                        <span class="block text-xl font-bold">11+ hrs</span>
+                                        <span class="block text-sm text-gray-500">Intense</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Focus Areas -->
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Focus Areas</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-start">
+                                    <div class="flex items-center h-5">
+                                        <input id="math" name="focus-areas" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded" checked>
+                                    </div>
+                                    <div class="ml-3 text-sm">
+                                        <label for="math" class="font-medium text-gray-700">Math (Priority)</label>
+                                        <p class="text-gray-500">Algebra, Problem Solving, Advanced Math</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex items-center h-5">
+                                        <input id="reading" name="focus-areas" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded" checked>
+                                    </div>
+                                    <div class="ml-3 text-sm">
+                                        <label for="reading" class="font-medium text-gray-700">Reading</label>
+                                        <p class="text-gray-500">Command of Evidence, Words in Context</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex items-center h-5">
+                                        <input id="writing" name="focus-areas" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded" checked>
+                                    </div>
+                                    <div class="ml-3 text-sm">
+                                        <label for="writing" class="font-medium text-gray-700">Writing</label>
+                                        <p class="text-gray-500">Expression of Ideas, Standard English Conventions</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Generated Plan Preview -->
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h2 class="text-xl font-bold text-gray-900 mb-6">Your Study Plan Preview</h2>
+                        
+                        <!-- Weekly Breakdown -->
+                        <div class="mb-8">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Weekly Breakdown</h3>
+                            <div class="space-y-4">
+                                <!-- Week 1 -->
+                                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                                    <button class="w-full flex justify-between items-center p-4 text-left bg-gray-50 hover:bg-gray-100">
+                                        <div>
+                                            <span class="font-medium text-gray-900">Week 1: Foundation Building</span>
+                                            <span class="ml-2 text-sm text-gray-500">6 hours</span>
+                                        </div>
+                                        <i class="fas fa-chevron-down text-gray-400"></i>
+                                    </button>
+                                    <div class="p-4 border-t border-gray-200">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div class="bg-indigo-50 p-4 rounded-lg">
+                                                <h4 class="font-medium text-indigo-700 mb-2">Monday</h4>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li class="flex items-start">
+                                                        <i class="fas fa-square text-xs text-indigo-500 mt-1 mr-2"></i>
+                                                        <span>Algebra Fundamentals (60 min)</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <i class="fas fa-square text-xs text-indigo-500 mt-1 mr-2"></i>
+                                                        <span>Reading Passage Practice (30 min)</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="bg-indigo-50 p-4 rounded-lg">
+                                                <h4 class="font-medium text-indigo-700 mb-2">Wednesday</h4>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li class="flex items-start">
+                                                        <i class="fas fa-square text-xs text-indigo-500 mt-1 mr-2"></i>
+                                                        <span>Problem Solving Techniques (60 min)</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <i class="fas fa-square text-xs text-indigo-500 mt-1 mr-2"></i>
+                                                        <span>Grammar Review (30 min)</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="bg-indigo-50 p-4 rounded-lg">
+                                                <h4 class="font-medium text-indigo-700 mb-2">Friday</h4>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li class="flex items-start">
+                                                        <i class="fas fa-square text-xs text-indigo-500 mt-1 mr-2"></i>
+                                                        <span>Algebra Practice Questions (60 min)</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <i class="fas fa-square text-xs text-indigo-500 mt-1 mr-2"></i>
+                                                        <span>Evidence-Based Reading (30 min)</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="bg-indigo-50 p-4 rounded-lg">
+                                                <h4 class="font-medium text-indigo-700 mb-2">Sunday</h4>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li class="flex items-start">
+                                                        <i class="fas fa-square text-xs text-indigo-500 mt-1 mr-2"></i>
+                                                        <span>Week 1 Review (60 min)</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <i class="fas fa-square text-xs text-indigo-500 mt-1 mr-2"></i>
+                                                        <span>Practice Quiz (30 min)</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Week 2 -->
+                                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                                    <button class="w-full flex justify-between items-center p-4 text-left bg-gray-50 hover:bg-gray-100">
+                                        <div>
+                                            <span class="font-medium text-gray-900">Week 2: Skill Development</span>
+                                            <span class="ml-2 text-sm text-gray-500">7 hours</span>
+                                        </div>
+                                        <i class="fas fa-chevron-down text-gray-400"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Study Strategy -->
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Study Strategy</h3>
+                            <div class="bg-indigo-50 p-4 rounded-lg">
+                                <h4 class="font-medium text-indigo-700 mb-2">Recommended Approach</h4>
+                                <ul class="text-sm text-gray-700 space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-0.5 mr-2"></i>
+                                        <span>Focus on algebra concepts first, as they form the foundation for more advanced math topics</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-0.5 mr-2"></i>
+                                        <span>Practice reading comprehension daily to improve speed and accuracy</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-0.5 mr-2"></i>
+                                        <span>Take one full-length practice test every 2 weeks to track progress</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-0.5 mr-2"></i>
+                                        <span>Review mistakes thoroughly and keep an error log</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Toggle week details
+        document.querySelectorAll('button[aria-expanded]').forEach(button => {
+            button.addEventListener('click', function() {
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !expanded);
+                const icon = this.querySelector('i');
+                if (expanded) {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                } else {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                }
+            });
+        });
+
+        // Custom radio buttons
+        document.querySelectorAll('.custom-radio input').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.querySelectorAll('.custom-radio span').forEach(span => {
+                    span.classList.remove('bg-indigo-600', 'text-white', 'border-indigo-600');
+                });
+                if (this.checked) {
+                    this.nextElementSibling.classList.add('bg-indigo-600', 'text-white', 'border-indigo-600');
+                }
+            });
+            
+            // Initialize checked state
+            if (radio.checked) {
+                radio.nextElementSibling.classList.add('bg-indigo-600', 'text-white', 'border-indigo-600');
+            }
+        });
+    </script>
+</body>
+</html>
