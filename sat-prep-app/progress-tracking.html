@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracking | LearnerLabs SAT Prep</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .progress-chart {
+            height: 300px;
+            background-color: #f8fafc;
+            border-radius: 0.5rem;
+        }
+        .milestone-card {
+            transition: all 0.3s ease;
+        }
+        .milestone-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .projection-dot {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-white shadow-sm">
+            <div class="px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16 items-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-graduation-cap text-indigo-600 text-2xl mr-2"></i>
+                        <h1 class="text-lg font-medium text-gray-900">Progress Tracking</h1>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="mr-4 text-sm font-medium">Current Score: 1350</span>
+                        <span class="px-3 py-1 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">
+                            +150 from start
+                        </span>
+                    </div>
+                </div>
+                <div class="flex border-b border-gray-200">
+                    <button class="px-4 py-3 text-sm font-medium border-b-2 border-indigo-500 text-indigo-600">
+                        <i class="fas fa-chart-line mr-2"></i>
+                        Score Trends
+                    </button>
+                    <button class="px-4 py-3 text-sm font-medium text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-trophy mr-2"></i>
+                        Milestones
+                    </button>
+                    <button class="px-4 py-3 text-sm font-medium text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-bullseye mr-2"></i>
+                        Projections
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Progress Content -->
+        <main class="flex-1 overflow-y-auto p-6">
+            <div class="max-w-7xl mx-auto">
+                <!-- Score Progress Chart -->
+                <div class="bg-white p-6 rounded-lg shadow mb-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-lg font-medium text-gray-900">Your SAT Score Progress</h2>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1 text-sm rounded-md bg-indigo-50 text-indigo-600">All Tests</button>
+                            <button class="px-3 py-1 text-sm rounded-md text-gray-500 hover:bg-gray-50">Last 3 Months</button>
+                        </div>
+                    </div>
+                    <div class="progress-chart flex items-center justify-center">
+                        <!-- This would be replaced with an actual chart in implementation -->
+                        <div class="text-center">
+                            <p class="text-gray-400 mb-2">Score trend chart would appear here</p>
+                            <div class="flex justify-center space-x-6 text-sm text-gray-500">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 rounded-full bg-indigo-500 mr-2"></div>
+                                    <span>Your Scores</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+                                    <span>Target</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 rounded-full bg-gray-300 mr-2 projection-dot"></div>
+                                    <span>Projection</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <p class="text-sm font-medium text-indigo-600">Starting Score</p>
+                            <p class="text-2xl font-bold text-gray-900">1200</p>
+                            <p class="text-xs text-gray-500">Dec 1, 2023</p>
+                        </div>
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <p class="text-sm font-medium text-indigo-600">Current Score</p>
+                            <p class="text-2xl font-bold text-gray-900">1350</p>
+                            <p class="text-xs text-gray-500">Dec 15, 2023</p>
+                        </div>
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <p class="text-sm font-medium text-indigo-600">Target Score</p>
+                            <p class="text-2xl font-bold text-gray-900">1400</p>
+                            <p class="text-xs text-gray-500">Test Date: Feb 10, 2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section Progress -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h2 class="text-lg font-medium text-gray-900 mb-4">Reading & Writing Progress</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm font-medium text-gray-700">Diagnostic</span>
+                                    <span class="text-sm font-medium text-gray-700">Current</span>
+                                    <span class="text-sm font-medium text-gray-700">Change</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-2xl font-bold text-gray-900">580</span>
+                                    <div class="w-full mx-4">
+                                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 70%"></div>
+                                        </div>
+                                    </div>
+                                    <span class="text-2xl font-bold text-green-600">670</span>
+                                    <span class="text-xl font-bold text-green-600">+90</span>
+                                </div>
+                            </div>
+                            <div class="border-t border-gray-200 pt-4">
+                                <h3 class="text-sm font-medium text-gray-700 mb-2">Key Improvements</h3>
+                                <ul class="space-y-1 text-sm text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-0.5 mr-2"></i>
+                                        <span>Command of Evidence: +25% accuracy</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-0.5 mr-2"></i>
+                                        <span>Words in Context: +18% accuracy</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h2 class="text-lg font-medium text-gray-900 mb-4">Math Progress</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm font-medium text-gray-700">Diagnostic</span>
+                                    <span class="text-sm font-medium text-gray-700">Current</span>
+                                    <span class="text-sm font-medium text-gray-700">Change</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-2xl font-bold text-gray-900">620</span>
+                                    <div class="w-full mx-4">
+                                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 50%"></div>
+                                        </div>
+                                    </div>
+                                    <span class="text-2xl font-bold text-green-600">680</span>
+                                    <span class="text-xl font-bold text-green-600">+60</span>
+                                </div>
+                            </div>
+                            <div class="border-t border-gray-200 pt-4">
+                                <h3 class="text-sm font-medium text-gray-700 mb-2">Key Improvements</h3>
+                                <ul class="space-y-1 text-sm text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-0.5 mr-2"></i>
+                                        <span>Algebra: +22% accuracy</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-exclamation-circle text-yellow-500 mt-0.5 mr-2"></i>
+                                        <span>Advanced Math needs work (+8%)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestones -->
+                <div class="bg-white p-6 rounded-lg shadow mb-6">
+                    <h2 class="text-lg font-medium text-gray-900 mb-4">Recent Milestones</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="milestone-card border border-gray-200 rounded-lg p-4 hover:border-indigo-300">
+                            <div class="flex items-center mb-2">
+                                <div class="p-2 rounded-full bg-green-100 text-green-600 mr-3">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <h3 class="font-medium text-gray-700">100-Point Club</h3>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">Reached 100+ point improvement from diagnostic</p>
+                            <p class="text-xs text-gray-500">Achieved Dec 10, 2023</p>
+                        </div>
+                        <div class="milestone-card border border-gray-200 rounded-lg p-4 hover:border-indigo-300">
+                            <div class="flex items-center mb-2">
+                                <div class="p-2 rounded-full bg-blue-100 text-blue-600 mr-3">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <h3 class="font-medium text-gray-700">Reading Master</h3>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">Scored 650+ on Reading & Writing section</p>
+                            <p class="text-xs text-gray-500">Achieved Dec 12, 2023</p>
+                        </div>
+                        <div class="milestone-card border border-gray-200 rounded-lg p-4 hover:border-indigo-300">
+                            <div class="flex items-center mb-2">
+                                <div class="p-2 rounded-full bg-purple-100 text-purple-600 mr-3">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <h3 class="font-medium text-gray-700">Speed Demon</h3>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">Completed full test with time remaining</p>
+                            <p class="text-xs text-gray-500">Achieved Dec 15, 2023</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projections -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h2 class="text-lg font-medium text-gray-900 mb-4">Projected Score Trajectory</h2>
+                    <div class="flex flex-col md:flex-row items-center justify-between mb-6">
+                        <div class="mb-4 md:mb-0">
+                            <p class="text-sm text-gray-500">Based on your current progress rate:</p>
+                            <p class="text-xl font-bold text-gray-900">Projected Test Day Score: <span class="text-indigo-600">1380-1420</span></p>
+                        </div>
+                        <div class="bg-green-50 px-4 py-2 rounded-md">
+                            <p class="text-sm text-green-700"><i class="fas fa-check-circle mr-1"></i> On track to reach your 1400 target!</p>
+                        </div>
+                    </div>
+                    <div class="progress-chart flex items-center justify-center">
+                        <!-- This would be replaced with an actual projection chart in implementation -->
+                        <p class="text-gray-400">Projection chart would appear here</p>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-sm font-medium text-gray-700 mb-2">Recommendations to reach 1400+</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-0.5 mr-2"></i>
+                                <span>Focus on Advanced Math concepts (potential +20 points)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-0.5 mr-2"></i>
+                                <span>Practice time management in Writing section (potential +10 points)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-0.5 mr-2"></i>
+                                <span>Take 2 more full practice tests before exam day</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
