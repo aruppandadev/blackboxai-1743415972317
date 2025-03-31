@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section Transition | LearnerLabs SAT Prep</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .break-timer {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #4f46e5;
+        }
+        .section-card {
+            transition: all 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col items-center justify-center p-6">
+        <div class="max-w-2xl w-full bg-white rounded-xl shadow-md overflow-hidden p-8 text-center">
+            <!-- Header -->
+            <div class="mb-8">
+                <i class="fas fa-check-circle text-green-500 text-5xl mb-4"></i>
+                <h1 class="text-2xl font-bold text-gray-900 mb-2">Reading and Writing Section Complete</h1>
+                <p class="text-gray-600">You answered 25 of 27 questions</p>
+            </div>
+
+            <!-- Break Timer -->
+            <div class="mb-8 p-6 bg-indigo-50 rounded-lg">
+                <h2 class="text-lg font-medium text-gray-900 mb-2">Break Time Remaining</h2>
+                <div class="break-timer mb-4" id="break-timer">10:00</div>
+                <p class="text-gray-600 text-sm">Next section will begin automatically when time expires</p>
+            </div>
+
+            <!-- Next Section Preview -->
+            <div class="mb-8">
+                <h2 class="text-lg font-medium text-gray-900 mb-4">Next: Math (No Calculator)</h2>
+                <div class="section-card bg-white border border-gray-200 rounded-lg p-4 max-w-xs mx-auto">
+                    <div class="flex items-center justify-center mb-2">
+                        <i class="fas fa-calculator text-indigo-500 text-2xl mr-2"></i>
+                        <span class="font-medium">Math - No Calculator</span>
+                    </div>
+                    <div class="text-sm text-gray-600">
+                        <p class="mb-1">20 questions</p>
+                        <p>25 minutes</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="flex justify-center space-x-4">
+                <button class="px-6 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                    Review Section
+                </button>
+                <button class="px-6 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                    Continue to Next Section
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Break timer functionality
+        let breakMinutes = 10;
+        let breakSeconds = 0;
+        
+        function updateBreakTimer() {
+            const timerElement = document.getElementById('break-timer');
+            timerElement.textContent = `${breakMinutes.toString().padStart(2, '0')}:${breakSeconds.toString().padStart(2, '0')}`;
+            
+            if (breakSeconds === 0) {
+                if (breakMinutes === 0) {
+                    // Break time's up!
+                    clearInterval(breakTimerInterval);
+                    alert('Break time is over. Starting next section...');
+                    // In a real app, this would automatically advance to next section
+                    return;
+                }
+                breakMinutes--;
+                breakSeconds = 59;
+            } else {
+                breakSeconds--;
+            }
+        }
+        
+        const breakTimerInterval = setInterval(updateBreakTimer, 1000);
+    </script>
+</body>
+</html>
